@@ -1,10 +1,9 @@
 {
-	"name": "active-win",
+	"name": "@workduck-io/active-win-universal",
 	"version": "7.6.1",
-	"description": "Get metadata about the active window (title, id, bounds, owner, URL, etc). Works on macOS, Linux, Windows.",
+	"description": "Get metadata about the active window (title, id, bounds, owner, URL, etc). Works on macOS, Linux, Windows. Present as a universal binary on macOS",
 	"license": "MIT",
-	"repository": "sindresorhus/active-win",
-	"funding": "https://github.com/sponsors/sindresorhus",
+	"repository": "workduck-io/active-win-universal",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
@@ -16,8 +15,11 @@
 	"scripts": {
 		"test": "xo && npm run build && ava && tsd",
 		"test-ci": "xo && tsd",
-		"build": "swift build --configuration=release && mv .build/release/active-win main",
+		"build": "swift build --configuration=release --arch arm64 --arch x86_64 && mv .build/apple/Products/Release/active-win main",
 		"prepare": "npm run build"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/workduck-io"
 	},
 	"files": [
 		"index.js",

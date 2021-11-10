@@ -1,8 +1,8 @@
-# active-win
+# active-win-universal
 
 Get metadata about the [active window](https://en.wikipedia.org/wiki/Active_window) (title, id, bounds, owner, URL, etc)
 
-Works on macOS, Linux, Windows.
+Works on macOS, Linux, Windows. On macOS, uses universal binaries (arm64 + x64)
 
 Users on macOS 10.13 or earlier needs to download the [Swift runtime support libraries](https://support.apple.com/kb/DL1998).
 
